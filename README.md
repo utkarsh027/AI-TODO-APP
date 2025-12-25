@@ -67,9 +67,63 @@ Make sure you have:
 
 Node.js v25+
 
-
 Docker Desktop (Apple Silicon supported)
 
 pnpm
 
 OpenAI API key
+
+# 🛠️ Setup Instructions (Step-by-Step)
+1️⃣ Clone the Repository
+```
+git clone https://github.com/utkarsh027/ai-todo-app.git
+cd ai-todo-app
+```
+# 2️⃣ Install Dependencies
+```
+pnpm install
+```
+# 3️⃣ Create .env File
+
+Create a file named .env in the root:
+```
+DATABASE_URL=postgres://admin:admin@localhost:5431/postgres
+OPENAI_API_KEY=your_openai_api_key_here
+
+```
+# 4️⃣ Start PostgreSQL (Docker)
+```
+docker compose up -d
+```
+# 5️⃣ Run Database Migrations
+```
+pnpm drizzle-kit generate
+pnpm drizzle-kit push
+```
+# 6️⃣ Run the AI Agent
+```
+node index.js
+```
+# You will see:
+# 🧑 You:
+
+# Start typing commands like:
+
+add a todo to buy milk
+
+show all todos
+
+search todo milk
+
+delete todo with id 1
+
+# 🧪 Example Interaction
+🧑 You: add a todo to buy milk
+
+🤖 AI: Todo created successfully for buying milk.
+
+
+
+
+
+
